@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.administrator.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+        </activity>
+
+
+        <activity android:name=".TestActivity">
+
+        </activity>
+        <activity android:name=".Activity05">
+
+        </activity>
+        <activity android:name=".Activity11">
+        </activity>
+        <activity android:name=".Activity12">
+
+        </activity>
+        <activity android:name=".Activity13">
+
+        </activity>
+        <activity android:name=".Activity09_2">
+        </activity>
+        <activity android:name=".Activity15">
+        </activity>
+        <activity android:name=".Activity13_2">
+        </activity>
+        <activity android:name=".Activity13_3">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
