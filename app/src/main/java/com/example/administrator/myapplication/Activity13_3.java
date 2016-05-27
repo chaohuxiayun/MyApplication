@@ -12,7 +12,7 @@ import android.widget.ImageView;
  */
 public class Activity13_3 extends BaseActivity{
 
-    public int[] a = {R.drawable.icon_11,R.drawable.icon_28,R.drawable.icon_30,R.drawable.icon_33,R.drawable.icon_37};
+    public int[] a = {R.drawable.icon_df,R.drawable.icon_28,R.drawable.icon_30,R.drawable.icon_df,R.drawable.icon_37};
     AdapterViewFlipper ada ;
 
     @Override

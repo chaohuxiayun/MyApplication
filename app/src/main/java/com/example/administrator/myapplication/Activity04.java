@@ -12,7 +12,7 @@ public class Activity04 extends Activity{
 
     ImageView imgview;
 
-    int[] i = {R.drawable.icon_11,R.drawable.icon_13,R.drawable.icon_16,R.drawable.icon_18};
+    int[] i = {R.drawable.icon_df,R.drawable.icon_df,R.drawable.icon_16,R.drawable.icon_18};
     int a=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
