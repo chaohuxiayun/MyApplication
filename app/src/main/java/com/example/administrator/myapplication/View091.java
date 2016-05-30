@@ -33,6 +33,11 @@ public class View091 extends ImageView {
 
     Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
             R.drawable.ic_launcher);
+    Bitmap bitback = BitmapFactory.decodeResource(getResources(),
+            R.drawable.back);
+    int width = bitback.getWidth();
+    int height = bitback.getHeight();
+
 
     WindowManager wm = (WindowManager) getContext().getSystemService(
             Context.WINDOW_SERVICE);
@@ -73,6 +78,7 @@ public class View091 extends ImageView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Paint p = new Paint();
+        canvas.drawBitmap(Bitmap.createBitmap(bitback,0,0,width,height),0,0,p);
         canvas.drawBitmap(bitmap, lastX, lastY, p);
         p.setStrokeWidth(8);
         for(Zidan z : list){
