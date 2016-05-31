@@ -37,7 +37,7 @@ public class Activity15 extends BaseActivity {
             }
             imgView.setDrawingCacheEnabled(true);
             Bitmap bit = Bitmap.createBitmap(imgView.getDrawingCache());
-            imgView.setDrawingCacheEnabled(true);
+            imgView.setDrawingCacheEnabled(false);
             Bitmap bit2 = Bitmap.createBitmap(bit,x,y,144,144);
             imgview2.setImageBitmap(bit2);
         }

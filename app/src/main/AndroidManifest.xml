@@ -10,12 +10,24 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
         </activity>
+        <activity android:name=".Activity02">
+        </activity>
+        <activity android:name=".Activity03">
+        </activity>
+        <activity android:name=".Activity04">
+        </activity>
+        <activity android:name=".Activity05">
+        </activity>
+        <activity android:name=".Activity07">
+        </activity>
+        <activity android:name=".Activity08">
+        </activity>
+
+
+
 
 
         <activity android:name=".TestActivity">
-
-        </activity>
-        <activity android:name=".Activity05">
 
         </activity>
         <activity android:name=".Activity11">
@@ -23,7 +35,13 @@
         <activity android:name=".Activity12">
 
         </activity>
+        <activity android:name=".Activity12_1">
+
+        </activity>
         <activity android:name=".Activity13">
+
+        </activity>
+        <activity android:name=".Activity14">
 
         </activity>
         <activity android:name=".Activity09_2">
@@ -42,20 +60,46 @@
 
         </activity>
         <activity android:name=".Activity15_2">
-        </activity><activity android:name=".Activity23_3">
+        </activity>
+        <activity android:name=".Activity23_3">
 
         </activity>
         <activity android:name=".Activity27">
 
         </activity>
+        <activity android:name=".Activity26">
+
+        </activity>
         <activity android:name=".Activity23">
+        </activity>
+        <activity android:name=".Activity22">
+        </activity>
+        <activity android:name=".Activity21" android:theme="@style/AppTheme.NoActionBar">
+    </activity>
+        <activity android:name=".Activity19" android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Activity19_2" android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".Activity19_3" android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Activity20" android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Activity24" android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Activity24_1" android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".CommitActivity" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

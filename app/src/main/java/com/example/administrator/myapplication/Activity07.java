@@ -34,7 +34,6 @@ public class Activity07 extends BaseActivity {
 
     @Override
     public void initContentView(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
             setContentView(R.layout.activity07_layout);
             t = new Timer();
             t.schedule(new TimerTask() {

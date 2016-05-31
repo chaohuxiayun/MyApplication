@@ -13,11 +13,13 @@ import android.widget.TextView;
 
 public class Activity03 extends Activity{
 
-    DisplayMetrics dm = getResources().getDisplayMetrics();
+    DisplayMetrics dm ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity03_layout);
+       dm = getResources().getDisplayMetrics();
         int width = dm.widthPixels;
         int  height = dm.heightPixels;
         int dpi = dm.densityDpi;

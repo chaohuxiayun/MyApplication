@@ -10,6 +10,7 @@ import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -116,6 +117,16 @@ public class Activity23 extends BaseActivity{
         Calendar d = Calendar.getInstance(Locale.CHINA);
         Date date = new Date();
         d.setTime(date);
+        int hour = d.get(Calendar.HOUR_OF_DAY);
+        int min = d.get(Calendar.MINUTE);
+        int sec = d.get(Calendar.SECOND);
+        tpm = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+            }
+        },hour,min,true);
+        tpm.show();
 
     }
 
