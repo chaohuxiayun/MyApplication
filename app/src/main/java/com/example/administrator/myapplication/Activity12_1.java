@@ -12,7 +12,7 @@ public class Activity12_1 extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MyView m = new MyView(this);
+        MyView m = new MyView(this,400,300);
         setContentView(m);
-    }
+}
 }

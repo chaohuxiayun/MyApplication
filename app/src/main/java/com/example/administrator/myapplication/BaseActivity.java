@@ -38,7 +38,7 @@ public abstract class BaseActivity  extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Toast.makeText(BaseActivity.this, "你点箭头了", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(BaseActivity.this,MainActivity.class);
+                Intent i = new Intent(BaseActivity.this,CommitActivity.class);
                 startActivity(i);
             }
         });

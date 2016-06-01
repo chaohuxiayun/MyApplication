@@ -1,10 +1,12 @@
 package com.example.administrator.myapplication;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -17,9 +19,19 @@ import java.util.List;
 public class MyView extends View implements View.OnTouchListener{
     public float xx = 300;
     public float yy = 300;
-    List<MyPoint> list = new ArrayList<MyPoint>();
-    public MyView(Context context) {
+
+    Bitmap bitmap;
+    Canvas tempc;
+    Paint tempp;
+
+
+    public MyView(Context context,int width,int height) {
         super(context);
+
+        tempc = new Canvas();
+        tempp = new Paint();
+        bitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
+        tempc.setBitmap(bitmap);
     }
 
     public MyView(Context context, AttributeSet attrs) {
@@ -31,23 +43,10 @@ public class MyView extends View implements View.OnTouchListener{
         super.onDraw(canvas);
 
         Paint p = new Paint();
-        p.setColor(Color.RED);
-        p.setAntiAlias(true);
-        p.setStrokeWidth(5);
+        canvas.drawBitmap(bitmap,0,0,p);
 
 //        canvas.drawCircle(cx,cy,50,p);
-        for(MyPoint point:list)
-        {
-            p.setColor(point.getColor());
-            for(float i=-2;i<=2;i+=0.001)
-            {
-                float y = (float) Math.sqrt(2*Math.sqrt(i*i)-i*i);
-                float y2 = (float) (-2.14*Math.sqrt(Math.sqrt(2)-Math.sqrt(Math.abs(i))));
 
-                canvas.drawPoint(i*150+point.getX(),-y*150+point.getY(),p);
-                canvas.drawPoint(i*150+point.getX(),-y2*150+point.getY(),p);
-            }
-        }
     }
 
     @Override
@@ -61,9 +60,39 @@ public class MyView extends View implements View.OnTouchListener{
             p.setY(yy);
             int color = 0xff000000+(int) (Math.random()*0xffffff);
             p.setColor(color);
-            list.add(p);
+            MyPoint point = p;
+           /* list.add(p);
+            for(MyPoint point:list)
+            {
+                tempp.setAntiAlias(true);
+                tempp.setStrokeWidth(5);
+                tempp.setColor(point.getColor());
+                for(float i=-2;i<=2;i+=0.001)
+                {
+                    float y = (float) Math.sqrt(2*Math.sqrt(i*i)-i*i);
+                    float y2 = (float) (-2.14*Math.sqrt(Math.sqrt(2)-Math.sqrt(Math.abs(i))));
+
+                    tempc.drawPoint(i*50+point.getX(),-y*50+point.getY(),tempp);
+                    tempc.drawPoint(i*50+point.getX(),-y2*50+point.getY(),tempp);
+                }
+            }*/
+            tempp.setAntiAlias(true);
+            tempp.setStrokeWidth(5);
+            tempp.setColor(point.getColor());
+            for(float i=-2;i<=2;i+=0.001)
+            {
+                float y = (float) Math.sqrt(2*Math.sqrt(i*i)-i*i);
+                float y2 = (float) (-2.14*Math.sqrt(Math.sqrt(2)-Math.sqrt(Math.abs(i))));
+
+                tempc.drawPoint(i*50+point.getX(),-y*50+point.getY(),tempp);
+                tempc.drawPoint(i*50+point.getX(),-y2*50+point.getY(),tempp);
+            }
+
+
             invalidate();
         }
+
+
         return true;
     }
 }

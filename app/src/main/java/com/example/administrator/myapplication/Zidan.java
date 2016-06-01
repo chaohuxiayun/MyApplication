@@ -1,8 +1,8 @@
 package com.example.administrator.myapplication;
 
 public class Zidan {
-	private float x;
-	private float y;
+	public  float x;
+	public float y;
 	public float getX() {
 		return x;
 	}

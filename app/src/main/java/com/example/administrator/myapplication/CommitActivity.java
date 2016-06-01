@@ -15,10 +15,10 @@ import android.widget.ListView;
 public class CommitActivity extends BaseActivity{
 
 
-    Class[] clazz = {Activity02.class,Activity03.class,Activity04.class,Activity05.class,Activity07.class,Activity08.class,Activity09_1.class,Activity09_2.class
+    Class[] clazz = {Activity02.class,Activity03.class,Activity04.class,Activity05.class,Activity05_2.class,Activity07.class,Activity08.class,Activity09_1.class,Activity09_2.class
     ,Activity11.class,Activity12.class,Activity12_1.class,Activity13.class,Activity13_2.class,Activity13_3.class,Activity13_4.class,Activity14.class,Activity15.class,Activity15_2.class,Activity19.class
-            ,Activity19_2.class,Activity19_3.class,Activity20.class,Activity21.class,Activity22.class,Activity23.class,Activity23_3.class,Activity24.class,Activity24_1.class,Activity26.class,Activity27.class
-    };
+            ,Activity19_2.class,Activity19_3.class,Activity20.class,Activity21.class,Activity22.class,Activity23.class,Activity23_3.class,Activity24.class,Activity24_1.class,Activity24_2.class,Activity26.class,Activity27.class
+    ,Activity_boom.class};
     String[] homework = new String[clazz.length];
     ListView lv ;
     @Override
