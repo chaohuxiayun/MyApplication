@@ -25,31 +25,41 @@ import android.view.WindowManager;
  */
 public class View091 extends ImageView {
 
-    private float lastX = 0;
-    private float lastY = 0;
+    int bkimg=10;//背景图片每次移动距离
+
+    private float lastX = 300;
+    private float lastY = 500;
 
     float dx;
     float dy;
 
     Timer t;
     Timer t1;
+    Timer t2;
     boolean flag = true;
     Matrix m;
 
 
     List<Zidan> list = new ArrayList<Zidan>();
+    List<Diji> dijis = new ArrayList<Diji>();
 
     Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
             R.drawable.ic_launcher);
     Bitmap bitback = BitmapFactory.decodeResource(getResources(),
             R.drawable.back);
     Bitmap bit3 ;
+    Bitmap bit4 =  BitmapFactory.decodeResource(getResources(),
+            R.drawable.airplane);
     int width ;
     int height ;
+
+    int airplanewidth ;
 
     DisplayMetrics dm;
     float sw;
     float sh;
+
+    Message msg;
 
     Handler h = new Handler(){
         @Override
@@ -70,13 +80,16 @@ public class View091 extends ImageView {
         super(context);
         t = new Timer();
         t1 = new Timer();
+        t2 = new Timer();
         m = new Matrix();
+        msg = new Message();
         dm = getResources().getDisplayMetrics();
+        airplanewidth = bit4.getWidth();
         sw = dm.widthPixels;
         sh = dm.heightPixels;
        width = bitback.getWidth();
         height = bitback.getHeight();
-        m.postScale(1.4f,1.8f);
+        m.postScale(1.8f,2.5f);
          bit3 = Bitmap.createBitmap(bitback,0,0,width,height,m,true);
     }
 
@@ -90,16 +103,48 @@ public class View091 extends ImageView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Paint p = new Paint();
-
-        canvas.drawBitmap(bit3,0,0,p);
-        canvas.drawBitmap(bitmap, lastX, lastY, p);
-//
-        p.setStrokeWidth(10);
-        p.setColor(Color.WHITE);
-        for(Zidan z : list){
-            z.setY(z.getY()-50);
-            canvas.drawLine(z.getX(), z.getY(), z.getX(), z.getY() - z.getSize(), p);
+        canvas.drawBitmap(Bitmap.createBitmap(bit3,0,bkimg,1024,1928),0,0,p);
+        bkimg +=20;
+        if(bkimg+1928>=bit3.getHeight()){
+            bkimg = 0;
         }
+        /*canvas.drawBitmap(bit3,0,0,p);*/
+        canvas.drawBitmap(bitmap, lastX, lastY, p);
+
+        p.setStrokeWidth(10);
+        p.setColor(Color.RED);
+
+
+
+
+        if(dijis.size() != 0){
+            for(int i=dijis.size()-1;i>=0;i--){
+                Diji d = dijis.get(i);
+                d.setY(d.getY()+100);
+                canvas.drawBitmap(bit4,d.getX(),d.getY(),p);
+                if(d.getY()>sh ){
+                    dijis.remove(i--);
+                }
+            }
+        }
+        if(list.size() != 0){
+            for(int i=list.size()-1;i>=0;i--){
+                Zidan z = list.get(i);
+                z.setY(z.getY()-30);
+                for(int j=dijis.size()-1;j>=0;j--){
+                    Diji d = dijis.get(j);
+                    if(z.getX()<d.getX()+airplanewidth && z.getX()>d.getX() && z.getY()>d.getY() && z.getY()<d.getY()+airplanewidth){
+                        dijis.remove(j--);
+                    }
+                }
+                canvas.drawLine(z.getX(), z.getY(), z.getX(), z.getY() - z.getSize(), p);
+                if(z.getY()<0){
+                    list.remove(i--);
+                }
+            }
+        }
+
+
 		/*canvas.drawLine(lastX, lastY, lastX, 0, p);*/
     }
 
@@ -118,6 +163,7 @@ public class View091 extends ImageView {
                         flag = false;
                     }
                     addZidan();
+                    addDiji();
                 case MotionEvent.ACTION_MOVE:
                     lastX = x - dx;
                     lastY = y - dy;
@@ -141,13 +187,13 @@ public class View091 extends ImageView {
     }
 
     public void addZidan(){
-        t = new Timer();
-        t.schedule(new TimerTask() {
-            @Override
-            public void run() {
+            t = new Timer();
+            t.schedule(new TimerTask() {
+                @Override
+                public void run() {
                     setZidan();
                 }
-        },0,300);
+            },0,1000);
 
     }
     public void refresh(){
@@ -157,7 +203,24 @@ public class View091 extends ImageView {
             public void run() {
                 h.sendMessage(new Message());
             }
-        },0,300);
+        },0,80);
     }
 
+    public void setdiji(){
+        int dx = (int)(Math.random()*900)+20;
+        Diji diji = new Diji();
+        diji.setX(dx);
+        diji.setY(-150);
+        dijis.add(diji);
+    }
+
+    public void addDiji(){
+        t2 = new Timer();
+        t2.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                setdiji();
+            }
+        },0,4000);
+    }
 }
