@@ -12,6 +12,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
@@ -38,6 +40,7 @@ public class View091 extends ImageView {
     Timer t2;
     boolean flag = true;
     Matrix m;
+    MediaPlayer mp;
 
 
     List<Zidan> list = new ArrayList<Zidan>();
@@ -50,6 +53,10 @@ public class View091 extends ImageView {
     Bitmap bit3 ;
     Bitmap bit4 =  BitmapFactory.decodeResource(getResources(),
             R.drawable.airplane);
+
+    Bitmap bitboom = BitmapFactory.decodeResource(getResources(),R.drawable.boom); // 爆炸动画
+
+
     int width ;
     int height ;
 
@@ -58,6 +65,8 @@ public class View091 extends ImageView {
     DisplayMetrics dm;
     float sw;
     float sh;
+
+    AnimationDrawable anim;
 
     Message msg;
 
@@ -83,6 +92,7 @@ public class View091 extends ImageView {
         t2 = new Timer();
         m = new Matrix();
         msg = new Message();
+        mp = MediaPlayer.create(context,R.raw.bomb);
         dm = getResources().getDisplayMetrics();
         airplanewidth = bit4.getWidth();
         sw = dm.widthPixels;
@@ -103,7 +113,7 @@ public class View091 extends ImageView {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Paint p = new Paint();
-        canvas.drawBitmap(Bitmap.createBitmap(bit3,0,bkimg,1024,1928),0,0,p);
+        canvas.drawBitmap(Bitmap.createBitmap(bit3,0,bkimg,1204,1928),0,0,p);
         bkimg +=20;
         if(bkimg+1928>=bit3.getHeight()){
             bkimg = 0;
