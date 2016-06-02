@@ -91,12 +91,7 @@ public class Activity27 extends BaseActivity{
         @Override
         protected void onPostExecute(String s) {
             String sdf = "";
-            if(s == null || s.equals("")){
-                sdf = "jkhk";
-            }else{
-                sdf = "qwewqeqw";
-            }
-            result.setText(sdf);
+            result.setText(s);
             pd.dismiss();
         }
 

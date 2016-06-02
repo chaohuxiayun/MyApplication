@@ -7,19 +7,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="http://img.bizhi.sogou.com/images/1440x900/2014/01/07/483164.jpg"
-        android:id="@+id/urlTxt"/>
+        android:id="@+id/urlTxt2"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="获取资源"
         android:id="@+id/geturlbtn"
-        android:onClick="getResources"/>
+        android:onClick="getResources2"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开下载的图片"
+        android:id="@+id/geturlbtn2"
+        android:onClick="openimg"/>
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-    <TextView
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout27_2_result"/>
+    </ScrollView>
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/layout27_result"/>
-    </ScrollView>
+        android:id="@+id/layout27_2_img1"/>
 </LinearLayout>
