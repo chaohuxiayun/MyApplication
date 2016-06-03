@@ -107,6 +107,7 @@
         </activity>
         <activity android:name=".Activity24_2" android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
         <activity android:name=".Activity24_2_2" android:theme="@style/AppTheme.NoActionBar" >
 
             <intent-filter>
@@ -125,6 +126,8 @@
         </activity>
         <activity android:name=".Activity_boom" android:theme="@style/AppTheme.NoActionBar">
 
+        </activity>
+        <activity android:name=".ActivitySdCardListFiles" android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
