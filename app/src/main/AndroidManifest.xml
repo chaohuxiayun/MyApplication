@@ -129,6 +129,8 @@
         </activity>
         <activity android:name=".ActivitySdCardListFiles" android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".ActivitySQLite01" android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
