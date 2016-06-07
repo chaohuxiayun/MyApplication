@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.app.AlertDialog;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -83,6 +84,7 @@ public class Activity_SMS extends Activity {
                         cursor.moveToPosition(position);
                         CheckBox rb = new CheckBox(Activity_SMS.this);
                         String number = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)).replace("-","").replace(" ","");
+                        Log.e("123",number);
                         rb.setText(number);
                         if(isChecked(number)){
                             rb.setChecked(true);
@@ -91,7 +93,7 @@ public class Activity_SMS extends Activity {
                     }
                 };
                 View selectView = getLayoutInflater().inflate(R.layout.activity_sms_layout_listview,null);
-                final ListView lv = (ListView) selectView.findViewById(R.id.layout_fromteachersqlite_result_lv1);
+                final ListView lv = (ListView) selectView.findViewById(R.id.l_sms_lv);
                 lv.setAdapter(ba);
                 new AlertDialog.Builder(Activity_SMS.this).setView(selectView)
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
