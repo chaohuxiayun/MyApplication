@@ -150,6 +150,8 @@
         </activity>
         <activity android:name=".ActivityGetTeacher_SQLite" android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".Activity34" android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
