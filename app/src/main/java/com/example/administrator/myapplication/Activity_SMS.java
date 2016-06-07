@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -61,32 +62,33 @@ public class Activity_SMS extends Activity {
             @Override
             public void onClick(View v) {
                 //从手机中查询所有的联系人
+                Log.e("1234","dsd");
                 final Cursor cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,null,null,null);
                 BaseAdapter ba = new BaseAdapter() {
                     @Override
                     public int getCount() {
-                        return 0;
+                        return cursor.getCount();
                     }
 
                     @Override
                     public Object getItem(int position) {
-                        return null;
+                        return position;
                     }
 
                     @Override
                     public long getItemId(int position) {
-                        return 0;
+                        return position;
                     }
 
                     @Override
                     public View getView(int position, View convertView, ViewGroup parent) {
-
+                        Log.e("1235","dsd");
                         cursor.moveToPosition(position);
                         CheckBox rb = new CheckBox(Activity_SMS.this);
                         String number = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)).replace("-","").replace(" ","");
                         Log.e("123",number);
                         rb.setText(number);
-                        if(isChecked(number)){
+                       if(isChecked(number)){
                             rb.setChecked(true);
                         }
                         return rb;
@@ -104,8 +106,9 @@ public class Activity_SMS extends Activity {
                             CheckBox cb = (CheckBox) lv.getChildAt(i);
                             if(cb.isChecked()){
                                 sendlist.add(cb.getText().toString());
-
                             }
+                           /* TextView tv  = (TextView) lv.getChildAt(i);*/
+                            sendlist.add(cb.getText().toString());
                         }
                         numbers.setText(sendlist.toString());
                     }
