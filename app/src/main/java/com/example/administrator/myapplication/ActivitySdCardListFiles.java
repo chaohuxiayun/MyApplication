@@ -64,6 +64,11 @@ public class ActivitySdCardListFiles extends BaseActivity{
                             i.setAction(android.content.Intent.ACTION_VIEW);
                             i.setDataAndType(Uri.fromFile(currentFile[position]), "image/*");
                             startActivity(i);
+                        }else if(currentFile[position].getCanonicalPath().toString().contains(".mp4")){
+                            Intent i = new Intent();
+                            i.setAction(android.content.Intent.ACTION_VIEW);
+                            i.setDataAndType(Uri.fromFile(currentFile[position]), "vedio/*");
+                            startActivity(i);
                         }
                     }catch(Exception e){
 

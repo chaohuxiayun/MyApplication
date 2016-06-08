@@ -33,7 +33,6 @@ public class Activity_openvedio extends Activity{
         vv.setMediaController(mc);
         mc.setMediaPlayer(vv);
         vv.setVideoURI(i.getData());
-
         vv.requestFocus();
 
 
