@@ -61,7 +61,7 @@ public class Activity27_2 extends BaseActivity{
                     Bitmap bit = BitmapFactory.decodeStream(openFileInput("oneimg.png"));
                     img.setImageBitmap(bit);
                 }
-            }catch (FileNotFoundException e){
+            }catch (Exception e){
 
             }
 
@@ -123,11 +123,11 @@ public class Activity27_2 extends BaseActivity{
     }
 
     public  void openimg(View view){
-        File file = new File("oneimg.png");
+        File file = new File("/mnt/sdcard/oneimg.png");
        /* try{*/
             if(!file.exists()){
                 Message m = new Message();
-                m.what = 3;
+                m.what = 4;
                 h.sendMessage(m);
             }else{
                 Message m = new Message();

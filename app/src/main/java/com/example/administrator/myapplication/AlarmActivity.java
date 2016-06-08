@@ -1,11 +1,13 @@
 package com.example.administrator.myapplication;
 
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.widget.Button;
 
 import java.util.Calendar;
 
@@ -14,7 +16,7 @@ import java.util.Calendar;
  */
 public class AlarmActivity extends Activity {
 
-
+    Button setTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
