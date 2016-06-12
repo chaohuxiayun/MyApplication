@@ -23,7 +23,7 @@ public class CommitActivity extends BaseActivity{
             ,"下载图片打开","爆炸动画","sd卡文件管理器，图片视屏可以直接打开"
             ,"数据库操作","左划图片变大","添加手势","回到桌面手势","文本框输入汉字，用音频读出来","ContentProvider数据共享"
             ,"电话的监听","短信群发","震动","播放视频","录音播放"
-            ,"视屏录制"
+            ,"视屏录制","闹铃"
     };
 
     Class[] clazz = {Activity02.class,Activity03.class,Activity04.class,Activity05.class,Activity05_2.class,Activity07.class,
@@ -37,7 +37,7 @@ public class CommitActivity extends BaseActivity{
     ,Activity27_2.class,Activity_boom.class,ActivitySdCardListFiles.class,
             ActivitySQLite01.class,Activity33.class,Activity35_1.class,Activity35_2.class,Activity36.class,ActivityGetTeacher_SQLite.class
         ,Activity_TelephonyManager.class,Activity_SMS.class,Activity_Vibrator.class,ActivityVideo.class,Activity_MediaRecorder.class
-            ,ActivityRecordervideo.class
+            ,ActivityRecordervideo.class,AlarmActivity.class
     };
 
 

@@ -30,10 +30,15 @@ public class Activity_openvedio extends Activity{
         Intent i = getIntent();
         Log.e("123",i.getData().toString());
         Toast.makeText(Activity_openvedio.this, i.getData().toString(), Toast.LENGTH_SHORT).show();
-        vv.setMediaController(mc);
-        mc.setMediaPlayer(vv);
-        vv.setVideoURI(i.getData());
-        vv.requestFocus();
+        if (i.getData().toString().contains(".png")){
+            iv.setImageURI(i.getData());
+        }else{
+            vv.setMediaController(mc);
+            mc.setMediaPlayer(vv);
+            vv.setVideoURI(i.getData());
+            vv.requestFocus();
+        }
+
 
 
     }

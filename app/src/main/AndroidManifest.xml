@@ -173,10 +173,14 @@
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="video/*" android:scheme="file"/>
+                <data android:mimeType="image/*" android:scheme="file"/>
 
             </intent-filter>
     </activity>
-
+        <activity android:name=".AlarmActivity" android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".AlarmActivity2" android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <receiver android:name=".SmsReceiver">
             <intent-filter android:priority="1000">
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
