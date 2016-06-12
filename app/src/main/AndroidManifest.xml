@@ -113,6 +113,8 @@
         </activity>
         <activity android:name=".Activity24_1" android:theme="@style/AppTheme.NoActionBar">
 
+        </activity><activity android:name=".GetGupiaoActivity" android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
         <activity android:name=".Activity24_2" android:theme="@style/AppTheme.NoActionBar">
         </activity>
@@ -166,6 +168,10 @@
         </activity>
         <activity android:name=".Activity_MediaRecorder" android:theme="@style/AppTheme.NoActionBar">
     </activity>
+        <activity android:name=".Activityupload" android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".Getupimg" android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity android:name=".ActivityRecordervideo" android:theme="@style/AppTheme.NoActionBar">
     </activity>
         <activity android:name=".Activity_openvedio" android:theme="@style/AppTheme.NoActionBar">
